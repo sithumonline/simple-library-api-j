@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      # match your Spring Boot prod profile:
+      POSTGRES_DB: simplelibrary
+      POSTGRES_USER: simplelibrary
+      POSTGRES_PASSWORD: simplelibrary
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
